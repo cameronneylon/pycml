@@ -11,11 +11,11 @@ setup(name='pycml',
       author='Cameron Neylon',
       author_email='pypi@cameroneylon.net',
       url='https://github.com/cameronneylon/pycml',
-      packages=find_packages(exclude=['test'])
+      packages=find_packages(exclude=['test']),
       install_requires = [
           'xml.etree.ElementTree',
           'warnings',
           'numpy'
-          ]
+          ],
       test_suite='test'
      )
