@@ -1,0 +1,4 @@
+*.pyc
+logs/
+artifacts/
+pycml.egg-info/
