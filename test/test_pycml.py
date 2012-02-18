@@ -479,23 +479,23 @@ class CMLDocTestBaseClass(TestParameterList):
         TestParameterList.setUp(self)
         self.values =  [self.int, self.text, self.float]
         self.list = [{'value': value, 'attrib':self.attrib} for value in self.values]
-        self.test.elements.append(ParameterList(self.list))
-        self.test.elements.append(CMLModule({'title':'test-title',
+        self.test.cmlelements.append(ParameterList(self.list))
+        self.test.cmlelements.append(CMLModule({'title':'test-title',
                                           'dictRef' : 'test-dictRef'}))
-        self.test.elements.append(PropertyList(self.list))
+        self.test.cmlelements.append(PropertyList(self.list))
 
     def tearDown(self):
         self.test = None
 
     def testCMLDocGeneration(self):
         self.assertIsInstance(self.test._root, ET.Element)
-        self.assertEqual(len(self.test.elements), 3)
+        self.assertEqual(len(self.test.cmlelements), 3)
         self.assertIsNone(self.test.convention)
 
     def testAddElementToCMLDoc(self):
-        self.assertIsInstance(self.test.elements[0], ParameterList)
-        self.assertIsInstance(self.test.elements[1], CMLModule)
-        self.assertIsInstance(self.test.elements[2], PropertyList)
+        self.assertIsInstance(self.test.cmlelements[0], ParameterList)
+        self.assertIsInstance(self.test.cmlelements[1], CMLModule)
+        self.assertIsInstance(self.test.cmlelements[2], PropertyList)
 
     def testRegisterNamespace(self):
         self.test.registerNamespace('foo', 'http://bar.com/')

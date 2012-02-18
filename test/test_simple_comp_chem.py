@@ -1,6 +1,6 @@
 import unittest
 from test_pycml import TestParameterList
-from conventions.simple_comp_chem import *
+from pycml.conventions.simple_comp_chem import *
 
 ###
 #Testing of Simple CompChem CML Elements
