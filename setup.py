@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-#import distribute_setup
-#distribute_setup.use_setuptools()
+import distribute_setup
+distribute_setup.use_setuptools()
 
 from setuptools import setup, find_packages
 from pycml.version import VERSION
@@ -11,7 +11,7 @@ setup(name='pycml',
       author='Cameron Neylon',
       author_email='pypi@cameroneylon.net',
       url='https://github.com/cameronneylon/pycml',
-      packages=find_packages(exclude=['test']),
+      packages=find_packages().append('distribute_setup'),
       install_requires = [
           'numpy'
           ],
