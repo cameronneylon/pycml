@@ -1,7 +1,4 @@
 import unittest
-#import sys
-#sys.path.append('/Users/Cameron/Documents/Python/cml')
-
 from pycml.pycml import *
 
 ###
