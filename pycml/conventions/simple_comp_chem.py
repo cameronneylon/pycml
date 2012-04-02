@@ -92,12 +92,12 @@ class CompChemModule(CMLModule):
     """Abstract module class for subclassing to compchem modules."""
 
     def __init__(self, dictref, title=None):
-        """Initialisation method for jobslist module.
+        """Initialisation method for Abstrac CompChem module.
 
-        The compchem convention recommends that a jobslist module have a human
-        readable title. The dictRef="compchem:jobsList" attribute is required.
-        The compchem convention recommends that a job module have a human
-        readable title. The dictRef="compchem:job" attribute is required.
+        The compchem convention recommends that a CompChem modules have a human
+        readable title. A dictRef attribute is required defining the module type.
+        The compchem convention recommends that a CompChem modules have a human
+        readable title. 
         """
 
         message = "A %s module must be defined by a compchem:%s attribute" \
@@ -118,7 +118,12 @@ class CompChemModule(CMLModule):
 
 
 class JobsList(CompChemModule):
-    """A CML Element Representing the JobsList module of a compchem CML doc"""
+    """A CML Element Representing the JobsList module of a compchem CML doc
+
+    The compchem convention recommends that a jobslist module have a human
+    readable title. The dictRef="compchem:jobsList" attribute is required.
+    The compchem convention recommends that a job module have a human
+    readable title. The dictRef="compchem:job" attribute is required."""
 
     def __init__(self, title=None):
         CompChemModule.__init__(self, 'jobsList', title)
